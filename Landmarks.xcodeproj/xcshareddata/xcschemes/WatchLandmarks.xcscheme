@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A8959BD62B3AF15700A32C04"
-               BuildableName = "WatchLandmarks Watch App.app"
-               BlueprintName = "WatchLandmarks Watch App"
+               BuildableName = "WatchLandmarks.app"
+               BlueprintName = "WatchLandmarks"
                ReferencedContainer = "container:Landmarks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A8959BD62B3AF15700A32C04"
-            BuildableName = "WatchLandmarks Watch App.app"
-            BlueprintName = "WatchLandmarks Watch App"
+            BuildableName = "WatchLandmarks.app"
+            BlueprintName = "WatchLandmarks"
             ReferencedContainer = "container:Landmarks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A8959BD62B3AF15700A32C04"
-            BuildableName = "WatchLandmarks Watch App.app"
-            BlueprintName = "WatchLandmarks Watch App"
+            BuildableName = "WatchLandmarks.app"
+            BlueprintName = "WatchLandmarks"
             ReferencedContainer = "container:Landmarks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

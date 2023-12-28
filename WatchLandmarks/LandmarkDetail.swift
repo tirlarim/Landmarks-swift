@@ -1,6 +1,6 @@
 //
 //  LandmarkDetail.swift
-//  WatchLandmarks Watch App
+//  WatchLandmarks
 //
 //  Created by Stanislav Romanov on 26.12.2023.
 //

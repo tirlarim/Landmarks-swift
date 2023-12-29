@@ -15,10 +15,23 @@ struct LandmarksApp: App {
     WindowGroup {
       ContentView()
         .environmentObject(modelData)
+#if os(macOS)
+        .onAppear {
+          NSWindow.allowsAutomaticWindowTabbing = false
+        }
+#endif
     }
+#if !os(watchOS)
+    .commands(content: {LandmarksCommands()})
+#endif
     
 #if os(watchOS)
     WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
+#endif
+#if os(macOS)
+    Settings {
+      LandmarkSettings()
+    }
 #endif
   }
 }

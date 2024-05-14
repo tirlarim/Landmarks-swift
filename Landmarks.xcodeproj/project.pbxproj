@@ -83,6 +83,9 @@
 		A8959BF02B3B006300A32C04 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84FD42A2B371A7F006093F3 /* Landmark.swift */; };
 		A8959BF32B3B012C00A32C04 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8959BF22B3B012C00A32C04 /* LandmarkDetail.swift */; };
 		A8C82DAD2B3EFF8300E54AFC /* LandmarkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C82DAC2B3EFF8300E54AFC /* LandmarkSettings.swift */; };
+		A8D527FC2BF308BE0050F7FA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A8D527FB2BF308BE0050F7FA /* Localizable.xcstrings */; };
+		A8D527FD2BF308BE0050F7FA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A8D527FB2BF308BE0050F7FA /* Localizable.xcstrings */; };
+		A8D527FE2BF308BE0050F7FA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A8D527FB2BF308BE0050F7FA /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +163,7 @@
 		A8959BE02B3AF15900A32C04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A8959BF22B3B012C00A32C04 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		A8C82DAC2B3EFF8300E54AFC /* LandmarkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkSettings.swift; sourceTree = "<group>"; };
+		A8D527FB2BF308BE0050F7FA /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +350,7 @@
 				A8055B8C2B37BB9F009FC60F /* Resources */,
 				A84FD4162B370993006093F3 /* LandmarksApp.swift */,
 				A84FD41A2B370995006093F3 /* Assets.xcassets */,
+				A8D527FB2BF308BE0050F7FA /* Localizable.xcstrings */,
 				A84FD41C2B370995006093F3 /* Preview Content */,
 			);
 			path = Landmarks;
@@ -486,6 +491,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A84FD40A2B370993006093F3;
 			productRefGroup = A84FD4142B370993006093F3 /* Products */;
@@ -506,6 +512,7 @@
 			files = (
 				A838AB902B3DAF9600D18FF5 /* hikeData.json in Resources */,
 				A838AB862B3DAE3B00D18FF5 /* Preview Assets.xcassets in Resources */,
+				A8D527FE2BF308BE0050F7FA /* Localizable.xcstrings in Resources */,
 				A838AB832B3DAE3B00D18FF5 /* Assets.xcassets in Resources */,
 				A838AB8C2B3DAF9600D18FF5 /* landmarkData.json in Resources */,
 				A838AB932B3DAF9600D18FF5 /* Assets.xcassets in Resources */,
@@ -518,6 +525,7 @@
 			files = (
 				A8073F102B3842DC00EAE3DC /* hikeData.json in Resources */,
 				A84FD41E2B370995006093F3 /* Preview Assets.xcassets in Resources */,
+				A8D527FC2BF308BE0050F7FA /* Localizable.xcstrings in Resources */,
 				A84FD41B2B370995006093F3 /* Assets.xcassets in Resources */,
 				A8073F322B3A893200EAE3DC /* LICENSE.txt in Resources */,
 				A84FD4292B371A09006093F3 /* landmarkData.json in Resources */,
@@ -533,6 +541,7 @@
 				A8959BDE2B3AF15900A32C04 /* Assets.xcassets in Resources */,
 				A880FE462B3B270C00A3506E /* Landmarks.app in Resources */,
 				A8959BE72B3B006300A32C04 /* landmarkData.json in Resources */,
+				A8D527FD2BF308BE0050F7FA /* Localizable.xcstrings in Resources */,
 				A8959BED2B3B006300A32C04 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

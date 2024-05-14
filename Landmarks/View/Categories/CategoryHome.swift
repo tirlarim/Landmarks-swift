@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CategoryHome: View {
-  @EnvironmentObject var modelData: ModelData
+  @Environment(ModelData.self) var modelData
   @State private var showingProfile = false
   
   var body: some View {
+    @Bindable var modelData = modelData
     NavigationSplitView {
       List {
         PageView(pages: modelData.features.map{FeatureCard(landmark: $0)})
@@ -33,7 +34,7 @@ struct CategoryHome: View {
       }
       .sheet(isPresented: $showingProfile) {
         ProfileHost()
-          .environmentObject(modelData)
+          .environment(modelData)
       }
     } detail: {
       Text("Select a Landmark")
@@ -41,9 +42,7 @@ struct CategoryHome: View {
   }
 }
 
-struct CategoryHome_Previews: PreviewProvider {
-  static var previews: some View {
-    CategoryHome()
-      .environmentObject(ModelData())
-  }
+#Preview {
+  CategoryHome()
+    .environment(ModelData())
 }

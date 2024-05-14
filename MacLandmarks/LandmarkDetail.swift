@@ -9,17 +9,19 @@ import SwiftUI
 import MapKit
 
 struct LandmarkDetail: View {
-  @EnvironmentObject var modelData: ModelData
+  @Environment(ModelData.self) var modelData
   var landmark: Landmark
   var landmarkIndex: Int {
     ModelData().landmarks.firstIndex(where: {$0.id == landmark.id})!
   }
   
   var body: some View {
+    @Bindable var modelData = modelData
+
     ScrollView {
       ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
         MapView(coordinate: landmark.locationCoordinate)
-          .frame(height: 200)
+          .frame(height: 300)
         
         Button("Open in Maps") {
           let destination = MKMapItem(placemark: MKPlacemark(coordinate: landmark.locationCoordinate))
@@ -61,11 +63,9 @@ struct LandmarkDetail: View {
   }
 }
 
-struct LandmarkDetailMac_Previews: PreviewProvider {
-  static var previews: some View {
-    let modelData = ModelData()
-    LandmarkDetail(landmark: modelData.landmarks[0])
-      .environmentObject(modelData)
-      .frame(width: 850, height: 700)
-  }
+#Preview {
+  let modelData = ModelData()
+  return LandmarkDetail(landmark: modelData.landmarks[0])
+    .environment(modelData)
+    .frame(width: 850, height: 700)
 }

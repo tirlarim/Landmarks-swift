@@ -27,13 +27,13 @@ struct NotificationView: View {
   }
 }
 
-struct NotificationView_Previews: PreviewProvider {
-  static var previews: some View {
-    NotificationView(
-     title: "Landmark Title",
-//     message: "message example",
-     message: "message long long long long long long long long long long long long",
-     landmark: ModelData().landmarks.first
-    )
-  }
+#Preview {
+  NotificationView()
+}
+
+#Preview {
+  NotificationView(
+    title: "Turtle Rock",
+    message: "You are within 5 miles of Turtle Rock.",
+    landmark: ModelData().landmarks[0])
 }

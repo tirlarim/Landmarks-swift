@@ -26,8 +26,6 @@ struct LandmarkSettings: View {
   }
 }
 
-struct LandmarkSettings_Previews: PreviewProvider {
-  static var previews: some View {
-    LandmarkSettings()
-  }
+#Preview {
+  LandmarkSettings()
 }

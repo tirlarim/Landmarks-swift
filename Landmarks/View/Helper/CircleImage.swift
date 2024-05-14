@@ -20,8 +20,6 @@ struct CircleImage: View {
   }
 }
 
-struct CircleImage_Previews: PreviewProvider {
-  static var previews: some View {
-    CircleImage(pic: Image("turtlerock"))
-  }
+#Preview {
+  CircleImage(pic: Image("turtlerock"))
 }

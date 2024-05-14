@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LandmarkList: View {
-  @EnvironmentObject var modelData: ModelData
+  @Environment(ModelData.self) var modelData
   @State private var showFavoritesOnly = false
   @State private var currentFilter = FilterCategory.all
   @State private var selectedLandmark: Landmark?
@@ -37,12 +37,8 @@ struct LandmarkList: View {
     return showFavoritesOnly ? "Favorute \(title)" : title
   }
   
-  func toggleSidebar() {
-    NSApp.keyWindow?.firstResponder?.tryToPerform(
-      #selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
-  }
-  
   var body: some View {
+    @Bindable var modelData = modelData
     if #available(macOS 13.0, *) {
       NavigationSplitView {
         LandmarkListView
@@ -69,14 +65,10 @@ struct LandmarkList: View {
         .tag(item)
       }
     }
-    .frame(minWidth: 300)
     .animation(.default, value: filteredLandmarks)
     .navigationTitle(title)
+    .frame(minWidth: 300)
     .toolbar {
-        ToolbarItem(placement: .primaryAction) { // delete in macOS 13?
-          Button(action: toggleSidebar, label: {
-            Image(systemName: "sidebar.left") }).help("Toggle Sidebar")
-        }
       ToolbarItem {
         Menu {
           Picker("Category", selection: $currentFilter) {
@@ -96,11 +88,7 @@ struct LandmarkList: View {
   }
 }
 
-
-
-struct LandmarkList_Previews: PreviewProvider {
-  static var previews: some View {
-    LandmarkList()
-      .environmentObject(ModelData())
-  }
+#Preview {
+  ContentView()
+    .environment(ModelData())
 }

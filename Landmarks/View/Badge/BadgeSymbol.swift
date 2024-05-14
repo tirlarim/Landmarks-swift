@@ -41,8 +41,6 @@ struct BadgeSymbol: View {
   }
 }
 
-struct BadgeSymbol_Previews: PreviewProvider {
-  static var previews: some View {
-    BadgeSymbol()
-  }
+#Preview {
+  BadgeSymbol()
 }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ProfileSummary: View {
-  @EnvironmentObject var modelData: ModelData
+  @Environment(ModelData.self) var modelData
   var profile: Profile
   
   var body: some View {
+    @Bindable var modelData = modelData
     ScrollView {
       VStack(alignment: .leading, spacing: 10) {
         Text("Default profile for: \(profile.username)")
@@ -47,9 +48,7 @@ struct ProfileSummary: View {
   }
 }
 
-struct ProfileSummary_Previews: PreviewProvider {
-  static var previews: some View {
-    ProfileSummary(profile: Profile.default)
-      .environmentObject(ModelData())
-  }
+#Preview {
+  ProfileSummary(profile: Profile.default)
+    .environment(ModelData())
 }

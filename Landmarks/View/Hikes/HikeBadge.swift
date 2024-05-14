@@ -24,8 +24,6 @@ struct HikeBadge: View {
   }
 }
 
-struct HikeBadge_Previews: PreviewProvider {
-  static var previews: some View {
-    HikeBadge(name: "Lorem ipsum dolor sit amet")
-  }
+#Preview {
+  HikeBadge(name: "Lorem ipsum dolor sit amet")
 }

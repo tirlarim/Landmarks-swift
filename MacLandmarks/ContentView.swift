@@ -10,13 +10,11 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     LandmarkList()
-      .frame(minWidth: 700, minHeight: 300)
+      .frame(minWidth: 800, minHeight: 600)
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-      .environmentObject(ModelData())
-  }
+#Preview {
+  ContentView()
+    .environment(ModelData())
 }

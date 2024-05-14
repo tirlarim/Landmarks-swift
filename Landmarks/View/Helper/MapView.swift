@@ -13,6 +13,7 @@ struct MapView: View {
   
   @AppStorage("MapView.zoom")
   private var zoom: Zoom = .medium
+  
   enum Zoom: String, CaseIterable, Identifiable {
     case near = "Near"
     case medium = "Medium"
@@ -23,7 +24,7 @@ struct MapView: View {
     }
   }
   
-  var delta: CLLocationDegrees {
+  private var delta: CLLocationDegrees {
     switch zoom {
     case .near: return 0.02
     case .medium: return 0.2
@@ -39,12 +40,10 @@ struct MapView: View {
   }
   
   var body: some View {
-    Map(coordinateRegion: .constant(region))
+    Map(position: .constant(.region(region)))
   }
 }
 
-struct MapView_Previews: PreviewProvider {
-  static var previews: some View {
-    MapView(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
-  }
+#Preview {
+  MapView(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
 }

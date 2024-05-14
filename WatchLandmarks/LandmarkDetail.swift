@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
-  @EnvironmentObject var modelData: ModelData
+  @Environment(ModelData.self) var modelData
   var landmark: Landmark
   
   var landmarkIndex: Int {
@@ -16,6 +16,7 @@ struct LandmarkDetail: View {
   }
   
   var body: some View {
+    @Bindable var modelData = modelData
     ScrollView {
       VStack {
         CircleImage(pic: landmark.image.resizable())
@@ -42,10 +43,9 @@ struct LandmarkDetail: View {
   }
 }
 
-struct LandmarkDetail_Previews: PreviewProvider {
-  static let modelData = ModelData()
-  static var previews: some View {
-    LandmarkDetail(landmark: modelData.landmarks[0])
-      .environmentObject(modelData)
-  }
+#Preview {
+  let modelData = ModelData()
+  return LandmarkDetail(landmark: modelData.landmarks[0])
+    .environment(modelData)
 }
+

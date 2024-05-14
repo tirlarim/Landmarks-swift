@@ -9,29 +9,25 @@ import SwiftUI
 
 @main
 struct LandmarksApp: App {
-  @State private var modelData: ModelData = ModelData()
+  @State private var modelData = ModelData()
   
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(modelData)
-#if os(macOS)
-        .onAppear {
-          NSWindow.allowsAutomaticWindowTabbing = false
-        }
-#endif
+        .environment(modelData)
     }
-#if !os(watchOS)
-    .commands(content: {LandmarksCommands()})
-#endif
-    
-#if os(watchOS)
+    #if !os(watchOS)
+    .commands {
+      LandmarksCommands()
+    }
+    #endif
+    #if os(watchOS)
     WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
-#endif
-#if os(macOS)
+    #endif
+    #if os(macOS)
     Settings {
       LandmarkSettings()
     }
-#endif
+    #endif
   }
 }
